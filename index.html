@@ -25,10 +25,11 @@
         <option value="3ตรง">3 ตัวตรง</option>
         <option value="3โต๊ด">3 ตัวโต๊ด</option>
       </select>
-      <input type="text" id="number" placeholder="เลข" required />
+      <input type="text" id="number" placeholder="เลข" maxlength="3" required />
       <input type="number" id="amount" placeholder="จำนวนเงิน" required />
       <label><input type="checkbox" id="cut" /> ตัดออกยอด</label>
       <button type="submit">บันทึก</button>
+      <button type="button" onclick="reverseNumber()">กลับเลข</button>
     </form>
 
     <h3>รายการล่าสุด</h3>

@@ -8,6 +8,7 @@ const USERS = {
 };
 
 let currentUser = null;
+let lastAmount = null;
 
 function login() {
   const u = document.getElementById("username").value;
@@ -45,6 +46,7 @@ document.getElementById("lottery-form").onsubmit = function(e) {
     amount: parseFloat(document.getElementById("amount").value),
     cut: document.getElementById("cut").checked
   };
+  lastAmount = entry.amount;
   const data = JSON.parse(localStorage.getItem(currentUser) || "[]");
   data.push(entry);
   localStorage.setItem(currentUser, JSON.stringify(data));
@@ -52,13 +54,26 @@ document.getElementById("lottery-form").onsubmit = function(e) {
   e.target.reset();
 };
 
+function reverseNumber() {
+  const numberField = document.getElementById("number");
+  const amountField = document.getElementById("amount");
+  const number = numberField.value;
+  if (number.length >= 2) {
+    const reversed = number.split("").reverse().join("");
+    numberField.value = reversed;
+    if (lastAmount !== null) {
+      amountField.value = lastAmount;
+    }
+  }
+}
+
 function exportData() {
   const data = localStorage.getItem(currentUser);
   const blob = new Blob([data], {type: "application/json"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");
   a.href = url;
-  a.download = `${currentUser}_lottery_data.json`;
+  a.download = `${currentUser}_lottery_data.json";
   a.click();
 }
 

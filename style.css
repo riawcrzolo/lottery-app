@@ -10,6 +10,15 @@ input, select, button {
   width: 100%;
   max-width: 300px;
 }
+button[type="button"] {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button[type="button"]:hover {
+  background-color: #45a049;
+}
 .error {
   color: red;
 }
