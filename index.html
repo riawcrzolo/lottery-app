@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>แอปคีย์หวย FINAL</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-container">
+    <h2>เข้าสู่ระบบ</h2>
+    <input type="text" id="username" placeholder="ชื่อผู้ใช้" />
+    <input type="password" id="password" placeholder="รหัสผ่าน" />
+    <button onclick="login()">เข้าสู่ระบบ</button>
+    <div id="login-error" class="error"></div>
+  </div>
+
+  <div id="app-container" style="display:none;">
+    <h2>คีย์หวย (เวอร์ชัน FINAL)</h2>
+    <form id="lottery-form">
+      <input type="date" id="date" required />
+      <select id="type">
+        <option value="2บน">2 ตัวบน</option>
+        <option value="2ล่าง">2 ตัวล่าง</option>
+        <option value="3ตรง">3 ตัวตรง</option>
+        <option value="3โต๊ด">3 ตัวโต๊ด</option>
+      </select>
+      <input type="text" id="number" placeholder="เลข" maxlength="3" required />
+      <input type="number" id="amount" placeholder="จำนวนเงิน" required />
+      <label><input type="checkbox" id="cut" /> ตัดออกยอด</label>
+      <button type="submit">บันทึก</button>
+      <button type="button" onclick="reverseNumber()">กลับเลข</button>
+    </form>
+
+    <h3>รายการล่าสุด</h3>
+    <div id="entries"></div>
+
+    <button onclick="exportData()">📤 ส่งออกข้อมูล</button>
+    <input type="file" onchange="importData(event)" />
+    <button onclick="logout()">ออกจากระบบ</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
