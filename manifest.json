@@ -1,0 +1,16 @@
+
+{
+  "name": "หวย FINAL V7",
+  "short_name": "หวยV7",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "description": "App คีย์หวยพร้อมระบบ Login Firebase",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
