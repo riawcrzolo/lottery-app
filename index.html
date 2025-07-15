@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8" />
+  <title>หวย FINAL (No Login)</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div id="app-page">
+    <h2>📋 ระบบคีย์หวย (ไม่ต้องล็อกอิน)</h2>
+    <button onclick="clearInput()">🧹 ล้างช่องกรอก</button>
+    <button onclick="resetAll()">🔁 รีเซตยอดทั้งหมด</button>
+
+    <form id="lottery-form">
+      <table>
+        <tr><th>เลข</th><th>บน</th><th>ล่าง</th><th>โต๊ด</th><th>กลับ</th><th>6ประตู</th></tr>
+        <script>
+          for(let i=0;i<10;i++){
+            document.write("<tr><td><input class='number'></td><td><input class='top'></td><td><input class='bottom'></td><td><input class='tod'></td><td><button type='button' onclick='reverseRow(this)'>↩</button></td><td><button type='button' onclick='reverse6Way(this)'>6</button></td></tr>");
+          }
+        </script>
+      </table>
+      <button type="submit">💾 บันทึกทั้งหมด</button>
+    </form>
+
+    <div id="summary" style="margin-top:20px;"></div>
+    <div id="chart" style="max-width:800px;margin-top:20px;"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
